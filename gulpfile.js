@@ -1,3 +1,8 @@
+/*
+NOTES
+sass sourcemap: true has dev tools styles show scss file not css file
+*/
+
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     sass = require('gulp-ruby-sass'),
@@ -13,7 +18,7 @@ gulp.task('js', function() {
 gulp.task('sass', function () {
     return sass('process/sass/style.scss', {
       sourcemap: true,
-      style: 'compressed'
+      style: 'expanded'
     })
     .on('error', function (err) {
         console.error('Error!', err.message);

@@ -1,17 +1,17 @@
- html {
-  font-size: 62.5%;
-}
+/*
+NOTES:
 
-body {
-  margin: 0;
-  padding: 0;
-  font-size: 1.8rem;
-  font-family: 'Helvetica', sans-serif;
-  color: #022933;
-  background-color: #EEE8D6;
-}
 
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
+*/
+
+// partials get an underscore at beginning
+// group into partials: with @import
+// don't need .scss extension
+// give underscore in name tells not processed but imported into main scss then processed. don't need _ or .scss in @import statements
+@import 'variables.scss';
+// normalize goes before my custom css
+@import 'normalize.scss';
+@import 'base.scss';
+
+// modules are different pages or parts of pages
+@import 'modules/media.scss';

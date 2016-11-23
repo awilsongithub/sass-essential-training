@@ -1,9 +1,13 @@
 /*
 NOTES:
-
-
+MODULAR WITH PARTIALS
+AND NODE MODULE DEPENDENCIES
+DRY WITH VARIABLES & MIXINS
+AUTOMATED WITH GULP
+FUNNELED INTO TARGET 1 CSS FILE
 */
 
+// ABOUT PARTIALS
 // partials get an underscore at beginning
 // group into partials: with @import
 // don't need .scss extension
@@ -11,7 +15,10 @@ NOTES:
 @import 'variables.scss';
 // normalize goes before my custom css
 @import 'normalize.scss';
+@import 'mixins';
 @import 'base.scss';
 
+// MODULES
 // modules are different pages or parts of pages
-@import 'modules/media.scss';
+@import 'modules/media';
+@import 'modules/backgrounds'

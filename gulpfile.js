@@ -15,6 +15,11 @@ gulp.task('js', function() {
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
+/*
+* .task takes name and function
+*  function returns result of sass, given a file and a parameters object
+*  .on return, pipes to give gulp.dest file
+*/
 gulp.task('sass', function () {
     return sass('process/sass/style.scss', {
       sourcemap: true,

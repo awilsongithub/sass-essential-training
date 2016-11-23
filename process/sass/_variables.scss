@@ -1,10 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Josefin+Slab|Merriweather|Oswald|Roboto+Slab');
+/*! This comment will show in processed css */
+/* This won't */
+// This won't
 
-// font-family: 'Roboto Slab', serif;
-// font-family: 'Merriweather', serif;
-// font-family: 'Josefin Slab', serif;
-// font-family: 'Oswald', sans-serif;
-// font-family: 'Bree Serif', serif;
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Josefin+Slab|Merriweather|Oswald|Roboto+Slab');
 
 $offwhite:  #EEE8D6;
 $darkblue:  #022933;

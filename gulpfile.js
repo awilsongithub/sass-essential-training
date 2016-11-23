@@ -19,6 +19,7 @@ gulp.task('js', function() {
 * .task takes name and function
 *  function returns result of sass, given a file and a parameters object
 *  .on return, pipes to give gulp.dest file
+* compressed/expanded for css output
 */
 gulp.task('sass', function () {
     return sass('process/sass/style.scss', {

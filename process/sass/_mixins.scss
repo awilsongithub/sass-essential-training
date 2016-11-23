@@ -31,3 +31,33 @@
     clear: both; // clear any above contents (serves as a wall pushing end of element past any elements out of flow ie floated elements )
   }
 }
+
+// mixin for each item in a grid
+// qty is qty per row.
+// calculates width of item based on #/row and margins
+@mixin imagegrid($qty, $margin){
+  // width of each item calculation 
+  width: ((100% - (($qty - 1) *  $margin))/$qty);
+  // give margin to every element b, right for spacers between them
+  &:nth-child(n){
+    margin-bottom: $margin;
+    margin-right: $margin;
+  }
+  // but last element don't give margin spacer
+  &:nth-child(#{$qty}n){
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+// without SASS
+// .griditem {
+//   width: 50%;
+//   margin-bottom: 1px;
+//   margin-right: 1px;
+//
+// }
+// .griditem:last-of-type {
+//   margin-bottom: 0;
+//   margin-right: 0;
+// }

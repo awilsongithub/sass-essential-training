@@ -36,7 +36,7 @@
 // qty is qty per row.
 // calculates width of item based on #/row and margins
 @mixin imagegrid($qty, $margin){
-  // width of each item calculation 
+  // width of each item calculation
   width: ((100% - (($qty - 1) *  $margin))/$qty);
   // give margin to every element b, right for spacers between them
   &:nth-child(n){
@@ -50,14 +50,9 @@
   }
 }
 
-// without SASS
-// .griditem {
-//   width: 50%;
-//   margin-bottom: 1px;
-//   margin-right: 1px;
-//
-// }
-// .griditem:last-of-type {
-//   margin-bottom: 0;
-//   margin-right: 0;
-// }
+// @content is passed from where mixin is @include(d)
+@mixin break($length){
+  @media (min-width: $length) {
+    @content;
+  }
+}

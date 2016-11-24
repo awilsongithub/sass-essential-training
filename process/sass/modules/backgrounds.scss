@@ -30,6 +30,9 @@
   }
 }
 
+#jumbotron {
+  margin-top: 0;
+}
 .jumbotron {
   @include backImage('../images/water.jpg', 600px);
 }

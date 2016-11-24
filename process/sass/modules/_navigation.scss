@@ -1,0 +1,55 @@
+header, footer {
+	background-color: darken($blue, 15%);
+	min-height: 50px;
+	padding-top: 10px;
+
+	&:hover {
+		background-color: darken($blue, 20%);
+	}
+}
+
+footer {
+	padding-top: 10px;
+	min-height: 200px;
+}
+
+nav {
+	.branding {
+		float: left;
+		display: none;
+		@include break(1000px){ // 1000px and wider
+			display: block;
+		}
+
+		h1 {
+			font-size: 2.75rem;
+			overflow: hidden;
+			margin: 0;
+			color: $yellow;
+		}
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		@include clearfix;
+
+		li {
+			@include break(760px) { // 760 and bigger
+				float: right;
+			}
+			padding: 10px 5px;
+
+			a {
+				text-decoration: none;
+				padding: 10px 5px;
+				color: $color-background;
+
+				&:hover {
+					color: $yellow;
+				}
+			}
+		}
+	}
+}

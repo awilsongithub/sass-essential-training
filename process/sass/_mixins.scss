@@ -32,18 +32,13 @@
   }
 }
 
-// mixin for each item in a grid
-// qty is qty per row.
-// calculates width of item based on #/row and margins
+// mixin for each item in a grid with $qty as $qty per row
 @mixin imagegrid($qty, $margin){
-  // width of each item calculation
   width: ((100% - (($qty - 1) *  $margin))/$qty);
-  // give margin to every element b, right for spacers between them
   &:nth-child(n){
     margin-bottom: $margin;
     margin-right: $margin;
   }
-  // but last element don't give margin spacer
   &:nth-child(#{$qty}n){
     margin-right: 0;
     margin-bottom: 0;
@@ -51,8 +46,18 @@
 }
 
 // @content is passed from where mixin is @include(d)
-@mixin break($length){
-  @media (min-width: $length) {
-    @content;
+// $first arg for sure, $args... optional additional
+@mixin break($args...){
+  @if length($args) == 1 {
+    @media (min-width: nth($args, 1)) {
+      @content;
+    }
+  }
+
+  @if length($args) == 2 {
+    @media (min-width: nth($args, 1)) and
+    (max-width: nth($args, 2)) {
+      @content;
+    }
   }
 }

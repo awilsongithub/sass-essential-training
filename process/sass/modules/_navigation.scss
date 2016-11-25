@@ -11,6 +11,9 @@ header, footer {
 footer {
 	padding-top: 10px;
 	min-height: 200px;
+	@include break(0, 500px){
+		display: none;
+	}
 }
 
 nav {

@@ -18,19 +18,29 @@ $color-btn-cool: $blue;
 	color: $color-btn-text;
 }
 
-$color-btns: (
-	default: $color-main,
-	hot: $red,
-	cool: $blue,
-	awesome: $purple
-);
+$color-btn-names: 'default', 'hot', 'cool';
+$color-btn-values: $color-main, $red, $blue;
 
-@each $key, $value in $color-btns {
-	.btn-#{$key} {
+@each $name in $color-btn-names {
+	.btn-#{$name} {
 		@extend %btn;
-		background-color: $value;
+		background-color: $color-main;
 	}
 }
+
+// $color-btns: (
+// 	default: $color-main,
+// 	hot: $red,
+// 	cool: $blue,
+// 	awesome: $purple
+// );
+//
+// @each $key, $value in $color-btns {
+// 	.btn-#{$key} {
+// 		@extend %btn;
+// 		background-color: $value;
+// 	}
+// }
 
 .grid {
 	@include clearfix;

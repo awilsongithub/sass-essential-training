@@ -21,14 +21,15 @@
 // before and :after are pseudo-elements
 // they insert before/after the content of the selected element
 // ie just before the content of each .item li
+// the after element is then cleared (pushed below all floated elements)
 @mixin clearfix {
   &:before,
   &:after {
     content: '';
-    display: table; // behave like a table element
+    display: table; 
   }
   &:after {
-    clear: both; // clear any above contents (serves as a wall pushing end of element past any elements out of flow ie floated elements )
+    clear: both;
   }
 }
 

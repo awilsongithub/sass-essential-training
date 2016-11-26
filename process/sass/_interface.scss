@@ -18,29 +18,24 @@ $color-btn-cool: $blue;
 	color: $color-btn-text;
 }
 
-$color-btn-names: 'default', 'hot', 'cool';
-$color-btn-values: $color-main, $red, $blue;
+// to add button styles just add to this assoc array
+$color-btns: (
+	default: $color-main,
+	hot: $red,
+	cool: $blue,
+	awesome: $purple,
+	halloween: $orange
+);
 
-@each $name in $color-btn-names {
-	.btn-#{$name} {
+// key default, color $black
+// .btn-red has bcolor $red etc.
+// interpolate $key but not $value (so can concatenate onto .btn- ???)
+@each $key, $value in $color-btns {
+	.btn-#{$key} {
 		@extend %btn;
-		background-color: $color-main;
+		background-color: $value;
 	}
 }
-
-// $color-btns: (
-// 	default: $color-main,
-// 	hot: $red,
-// 	cool: $blue,
-// 	awesome: $purple
-// );
-//
-// @each $key, $value in $color-btns {
-// 	.btn-#{$key} {
-// 		@extend %btn;
-// 		background-color: $value;
-// 	}
-// }
 
 .grid {
 	@include clearfix;

@@ -12,15 +12,13 @@ FUNNELED INTO TARGET 1 CSS FILE
 // group into partials: with @import
 // don't need .scss extension
 // give underscore in name tells not processed but imported into main scss then processed. don't need _ or .scss in @import statements
+@import 'normalize.scss'; // normalize goes before my css
 @import 'variables.scss';
-// normalize goes before my custom css
-@import 'normalize.scss';
 @import 'mixins';
 @import 'base.scss';
 @import 'interface.scss';
 
-// MODULES
-// modules are different pages or parts of pages
+// MODULES (pages or parts of pages)
 @import 'modules/media';
 @import 'modules/backgrounds';
 @import 'modules/tables';
